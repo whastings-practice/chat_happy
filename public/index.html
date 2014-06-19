@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="ChatApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Chat App</title>
   </head>
   <body>
-    Chat App Coming Soon!
+    <div class="container">
+      <div class="chat-window">
+
+      </div>
+      <div class="chat-input" ng-controller="InputController as input">
+
+      </div>
+    </div>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/services/socket.js"></script>
+    <script src="/js/controllers/input_controller.js"></script>
+    <script src="/js/controllers/window_controller.js"></script>
   </body>
 </html>

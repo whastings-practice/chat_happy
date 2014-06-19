@@ -1,0 +1,20 @@
+{
+  "name": "chat_app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/whastings-practice/chat_app",
+  "authors": [
+    "Will Hastings <will@objectdotcreate.net>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.18"
+  }
+}
