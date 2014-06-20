@@ -1,3 +1,3 @@
-ChatApp.controller('InputController', function($scope, socket) {
+window.ChatApp.controller('InputController', function($scope, socket) {
   this.message = '';
 });
