@@ -1,10 +1,10 @@
-window.ChatApp.controller('WindowController', function($scope, socket) {
+window.ChatApp.controller('WindowController', function(chatRoom, $scope, socket) {
   var self = this;
-  this.messages = [];
+  this.messages = chatRoom.messages;
 
   socket.on('new_message', function(data) {
     $scope.$apply(function() {
-      self.messages.push(data.message);
+      chatRoom.addMessage(data.message);
     });
   });
 });
