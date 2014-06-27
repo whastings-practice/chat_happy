@@ -1,4 +1,5 @@
-window.ChatApp.controller('WindowController', function(chatRoom, $scope, socket) {
+angular.module('ChatApp.controllers').
+controller('WindowController', function(chatRoom, $scope, socket) {
   var self = this;
   this.messages = chatRoom.messages;
 

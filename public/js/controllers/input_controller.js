@@ -1,4 +1,5 @@
-window.ChatApp.controller('InputController', function(chatRoom, $scope, socket) {
+angular.module('ChatApp.controllers').
+controller('InputController', function(chatRoom, $scope, socket) {
   this.message = '';
 
   this.sendMessage = function() {

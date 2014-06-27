@@ -1,4 +1,5 @@
-window.ChatApp.factory('chatRoom', function() {
+angular.module('ChatApp.services').
+factory('chatRoom', function() {
   var chatRoom = {};
 
   chatRoom.messages = [];
