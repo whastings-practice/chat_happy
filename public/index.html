@@ -7,11 +7,16 @@
   </head>
   <body>
     <div class="container">
-      <div class="chat-window">
-
+      <div class="chat-window" ng-controller="WindowController as chatWindow">
+        <ul class="chat-messages">
+          <li ng-repeat="message in chatWindow.messages">{{message}}</li>
+        </ul>
       </div>
       <div class="chat-input" ng-controller="InputController as input">
-
+        <form ng-submit="input.sendMessage()">
+          <input ng-model="input.message">
+          <input type="submit" value="Send">
+        </form>
       </div>
     </div>
     <script src="/bower_components/angular/angular.js"></script>
