@@ -9,7 +9,9 @@
     <div class="container">
       <div class="chat-window" ng-controller="WindowController as chatWindow">
         <ul class="chat-messages">
-          <li ng-repeat="message in chatWindow.messages">{{message}}</li>
+          <li ng-repeat="message in chatWindow.messages track by $index">
+            {{message}}
+          </li>
         </ul>
       </div>
       <div class="user-list" ng-controller="UserListController as userList">
