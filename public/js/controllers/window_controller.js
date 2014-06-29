@@ -8,4 +8,16 @@ controller('WindowController', function(chatRoom, $scope, socket) {
       chatRoom.addMessage(data.message);
     });
   });
+
+  socket.on('user_connect', function(data) {
+    $scope.$apply(function() {
+      chatRoom.addMessage('User ' + data.user + ' has joined.');
+    });
+  });
+
+  socket.on('user_disconnect', function(data) {
+    $scope.$apply(function() {
+      chatRoom.addMessage('User ' + data.user + ' has left.');
+    });
+  });
 });

@@ -12,6 +12,11 @@
           <li ng-repeat="message in chatWindow.messages">{{message}}</li>
         </ul>
       </div>
+      <div class="user-list" ng-controller="UserListController as userList">
+        <ul>
+          <li ng-repeat="user in userList.users">{{user}}</li>
+        </ul>
+      </div>
       <div class="chat-input" ng-controller="InputController as input">
         <form ng-submit="input.sendMessage()">
           <input ng-model="input.message">
@@ -26,5 +31,6 @@
     <script src="/js/services/chat_room.js"></script>
     <script src="/js/controllers/input_controller.js"></script>
     <script src="/js/controllers/window_controller.js"></script>
+    <script src="/js/controllers/user_list_controller.js"></script>
   </body>
 </html>
