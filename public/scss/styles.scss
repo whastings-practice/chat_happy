@@ -1,3 +1,5 @@
+@import 'normalize';
+
 * {
   box-sizing: border-box;
 }
@@ -13,13 +15,26 @@ body {
   width: 80%;
 }
 
-.user-list {
+.chat-messages {
+  list-style: none;
+}
+
+.user-window {
   background-color: #fff;
   float: left;
   width: 18%;
 }
 
+.user-list {
+  list-style: none;
+}
+
 .chat-input {
   bottom: 0;
   position: absolute;
+  width: 100%;
+}
+
+.message-input {
+  width: 75%;
 }

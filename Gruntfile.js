@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     sass: {
       buildDev: {
         options: {
+          loadPath: ['vendor/css'],
           sourcemap: true
         },
         files: {

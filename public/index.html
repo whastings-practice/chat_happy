@@ -15,14 +15,14 @@
           </li>
         </ul>
       </div>
-      <div class="user-list" ng-controller="UserListController as userList" full-height>
-        <ul>
+      <div class="user-window" ng-controller="UserListController as userList" full-height>
+        <ul class="user-list">
           <li ng-repeat="user in userList.users">{{user}}</li>
         </ul>
       </div>
       <div class="chat-input" ng-controller="InputController as input">
         <form ng-submit="input.sendMessage()">
-          <input ng-model="input.message">
+          <input ng-model="input.message" class="message-input">
           <input type="submit" value="Send">
         </form>
       </div>

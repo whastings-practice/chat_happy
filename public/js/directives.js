@@ -3,7 +3,7 @@ angular.module('ChatApp.directives')
   return {
     restrict: 'A',
     compile: function(element) {
-      var pageHeight = document.documentElement.clientHeight - 30;
+      var pageHeight = document.documentElement.clientHeight - 40;
       element.css('height', pageHeight + 'px');
     }
   };
