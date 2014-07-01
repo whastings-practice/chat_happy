@@ -12,5 +12,18 @@
     "express": "^4.4.3",
     "protomatter": "~0.1.0",
     "socket.io": "~1.0.5"
-  }
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/whastings-practice/chat_app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/whastings-practice/chat_app/issues"
+  },
+  "homepage": "https://github.com/whastings-practice/chat_app"
 }
