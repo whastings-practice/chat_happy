@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #b0e0f8;
+}
+
+.chat-window {
+  background-color: #fff;
+  float: left;
+  margin-right: 2%;
+  width: 80%;
+}
+
+.user-list {
+  background-color: #fff;
+  float: left;
+  width: 18%;
+}
+
+.chat-input {
+  bottom: 0;
+  position: absolute;
+}
