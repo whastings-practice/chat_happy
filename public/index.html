@@ -17,8 +17,13 @@
       </div>
       <div class="user-window" ng-controller="UserListController as userList" full-height>
         <ul class="user-list">
-          <li ng-repeat="user in userList.users">{{user}}</li>
+          <li ng-repeat="user in userList.userList">{{user}}</li>
         </ul>
+        <form class="user-settings" ng-submit="userList.user.save()">
+          <label for="username">Username</label>
+          <input type="text" ng-model="userList.user.username" id="username">
+          <input type="submit" value="Save">
+        </form>
       </div>
       <div class="chat-input" ng-controller="InputController as input">
         <form ng-submit="input.sendMessage()">
@@ -32,6 +37,7 @@
     <script src="/js/app.js"></script>
     <script src="/js/services/socket.js"></script>
     <script src="/js/services/chat_room.js"></script>
+    <script src="/js/services/user.js"></script>
     <script src="/js/directives.js"></script>
     <script src="/js/controllers/input_controller.js"></script>
     <script src="/js/controllers/window_controller.js"></script>
