@@ -1,6 +1,6 @@
 "use strict";
 
-var ChatRoom = require('./lib/chat_room'),
+var ChatManager = require('./lib/chat_manager'),
     express = require('express'),
     http = require('http'),
     socketIO = require('socket.io');
@@ -10,7 +10,7 @@ var app = express(),
     router = express.Router();
 
 var io = socketIO(server),
-    chatRoom = ChatRoom.create(io);
+    chatManager = ChatManager.create(io);
 
 var port = process.argv[2] || 8080;
 
