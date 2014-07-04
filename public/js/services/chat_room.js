@@ -24,6 +24,10 @@ factory('chatRoom', function() {
     });
   };
 
+  chatRoom.emptyUsers = function() {
+    this.users.splice(0, this.users.length);
+  };
+
   chatRoom.removeUser = function(user) {
     this.users.splice(this.users.indexOf(user), 1);
   };

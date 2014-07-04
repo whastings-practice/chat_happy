@@ -13,6 +13,7 @@ angular.module('ChatApp.controllers')
   });
 
   socket.on('user_list_update', $scope, function(data) {
+    chatRoom.emptyUsers();
     chatRoom.addUsers(data);
   });
 
