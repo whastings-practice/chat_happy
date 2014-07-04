@@ -5,8 +5,12 @@ factory('chatRoom', function() {
   chatRoom.users = [];
   chatRoom.messages = [];
 
-  chatRoom.addMessage = function(message) {
-    this.messages.push(message);
+  chatRoom.addMessage = function(messageData) {
+    this.messages.push(messageData);
+  };
+
+  chatRoom.addNotice = function(notice) {
+    this.addMessage({author: 'NOTICE', message: notice});
   };
 
   chatRoom.addUser = function(user) {

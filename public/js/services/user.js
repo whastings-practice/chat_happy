@@ -10,5 +10,9 @@ angular.module('ChatApp.services')
     });
   };
 
+  user.updateInfo = function(data) {
+    this.username = data.username;
+  };
+
   return user;
 });

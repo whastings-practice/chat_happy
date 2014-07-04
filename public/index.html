@@ -10,8 +10,9 @@
     <div class="container" full-height>
       <div class="chat-window" ng-controller="WindowController as chatWindow" parent-height>
         <ul class="chat-messages">
-          <li ng-repeat="message in chatWindow.messages track by $index">
-            {{message}}
+          <li ng-repeat="messageData in chatWindow.messages track by $index">
+            <span class="message-author">{{messageData.author}}: </span>
+            {{messageData.message}}
           </li>
         </ul>
       </div>
