@@ -9,22 +9,17 @@
   <body>
     <div class="container" full-height>
       <div class="chat-window" ng-controller="WindowController as chatWindow" parent-height>
-        <ul class="chat-messages">
-          <li ng-repeat="messageData in chatWindow.messages track by $index">
-            <span class="message-author">{{messageData.author}}: </span>
-            {{messageData.message}}
-          </li>
-        </ul>
+        <chat-window rooms="chatWindow.rooms"></chat-window>
       </div>
       <div class="user-window" ng-controller="UserListController as userList" full-height>
         <ul class="user-list">
           <li ng-repeat="user in userList.userList">{{user}}</li>
         </ul>
-        <form class="user-settings" ng-submit="userList.user.save()">
+        <form class="user-settings" ng-submit="userList.user.save(newRoom)">
           <label for="username">Username</label>
           <input type="text" ng-model="userList.user.username" id="username">
-          <label for="room">Room</label>
-          <input type="text" ng-model="userList.user.room" id="room">
+          <label for="room">Join Room</label>
+          <input type="text" ng-model="newRoom" id="room">
           <input type="submit" value="Save">
         </form>
       </div>
@@ -37,6 +32,8 @@
     </div>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/node_modules/protomatter/protomatter.js"></script>
+    <script src="/node_modules/underscore/underscore.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/services/socket.js"></script>
     <script src="/js/services/chat_room.js"></script>

@@ -1,0 +1,7 @@
+<ul class="chat-messages" ng-show="room.current">
+  <li>ROOM: {{room.name}}</li>
+  <li ng-repeat="messageData in room.messages track by $index">
+    <span class="message-author">{{messageData.author}}: </span>
+    {{messageData.message}}
+  </li>
+</ul>

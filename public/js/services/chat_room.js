@@ -1,36 +1,39 @@
 angular.module('ChatApp.services').
-factory('chatRoom', function() {
-  var chatRoom = {};
+factory('ChatRoom', function() {
+  var ChatRoom = {};
 
-  chatRoom.users = [];
-  chatRoom.messages = [];
-
-  chatRoom.addMessage = function(messageData) {
+  ChatRoom.addMessage = function(messageData) {
     this.messages.push(messageData);
   };
 
-  chatRoom.addNotice = function(notice) {
+  ChatRoom.addNotice = function(notice) {
     this.addMessage({author: 'NOTICE', message: notice});
   };
 
-  chatRoom.addUser = function(user) {
+  ChatRoom.addUser = function(user) {
     this.addUsers([user]);
   };
 
-  chatRoom.addUsers = function(users) {
+  ChatRoom.addUsers = function(users) {
     var allUsers = this.users;
     users.forEach(function(user) {
       allUsers.push(user);
     });
   };
 
-  chatRoom.emptyUsers = function() {
+  ChatRoom.emptyUsers = function() {
     this.users.splice(0, this.users.length);
   };
 
-  chatRoom.removeUser = function(user) {
+  ChatRoom.initialize = function(name, users) {
+    this.messages = [];
+    this.name = name;
+    this.users = users;
+  };
+
+  ChatRoom.removeUser = function(user) {
     this.users.splice(this.users.indexOf(user), 1);
   };
 
-  return chatRoom;
+  return Protomatter.create(ChatRoom);
 });
