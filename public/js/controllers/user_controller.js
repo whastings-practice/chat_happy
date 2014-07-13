@@ -7,11 +7,6 @@ angular.module('ChatApp.controllers')
     user.updateInfo(data);
   });
 
-  //socket.on('name_change', $scope, function(data) {
-    //chatRoom.removeUser(data.oldName);
-    //chatRoom.addUser(data.newName);
-  //});
-
   //socket.on('user_list_update', $scope, function(data) {
     //chatRoom.emptyUsers();
     //chatRoom.addUsers(data);
