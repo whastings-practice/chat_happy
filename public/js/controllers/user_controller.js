@@ -1,6 +1,6 @@
 angular.module('ChatApp.controllers')
-.controller('UserListController', function($scope, socket, user) {
-  this.userList = user.currentRoom().users;
+.controller('UserController', function($scope, socket, user) {
+  this.rooms = user.rooms;
   this.user = user;
 
   socket.on('info_update', $scope, function(data) {
@@ -16,12 +16,4 @@ angular.module('ChatApp.controllers')
     //chatRoom.emptyUsers();
     //chatRoom.addUsers(data);
   //});
-
-  socket.on('user_connect', $scope, function(data) {
-    user.rooms[data.roomName].addUser(data.user);
-  });
-
-  socket.on('user_disconnect', $scope, function(data) {
-    user.rooms[data.roomName].removeUser(data.user);
-  });
 });

@@ -6,18 +6,16 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>Chat App</title>
   </head>
-  <body>
+  <body ng-controller="ChatController as chatCtrl">
     <div class="container" full-height>
       <div class="chat-window" ng-controller="WindowController as chatWindow" parent-height>
         <chat-window rooms="chatWindow.rooms"></chat-window>
       </div>
-      <div class="user-window" ng-controller="UserListController as userList" full-height>
-        <ul class="user-list">
-          <li ng-repeat="user in userList.userList">{{user}}</li>
-        </ul>
-        <form class="user-settings" ng-submit="userList.user.save(newRoom)">
+      <div class="user-window" ng-controller="UserController as userCtrl" full-height>
+        <user-list ng-repeat="room in userCtrl.rooms" room="room"></user-list>
+        <form class="user-settings" ng-submit="userCtrl.user.save(newRoom)">
           <label for="username">Username</label>
-          <input type="text" ng-model="userList.user.username" id="username">
+          <input type="text" ng-model="userCtrl.user.username" id="username">
           <label for="room">Join Room</label>
           <input type="text" ng-model="newRoom" id="room">
           <input type="submit" value="Save">
@@ -39,8 +37,9 @@
     <script src="/js/services/chat_room.js"></script>
     <script src="/js/services/user.js"></script>
     <script src="/js/directives.js"></script>
+    <script src="/js/controllers/chat_controller.js"></script>
     <script src="/js/controllers/input_controller.js"></script>
     <script src="/js/controllers/window_controller.js"></script>
-    <script src="/js/controllers/user_list_controller.js"></script>
+    <script src="/js/controllers/user_controller.js"></script>
   </body>
 </html>

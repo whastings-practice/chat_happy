@@ -6,7 +6,9 @@ angular.module('ChatApp.services')
   };
 
   user.addRoom = function(room) {
-    if (this.rooms[room.name]) {
+    var existingRoom = this.rooms[room.name];
+    if (existingRoom) {
+      existingRoom.users = room.users;
       return;
     }
     this.rooms[room.name] = room;
