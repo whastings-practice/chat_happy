@@ -1,5 +1,6 @@
 <ul class="chat-tabs">
   <li ng-repeat="room in rooms">
     <a href="#" ng-click="switchRoom(room)">{{room.name}}</a>
+    <a href="#" class="room-tab-close" ng-click="closeRoom(room)">x</a>
   </li>
 </ul>

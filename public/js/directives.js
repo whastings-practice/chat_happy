@@ -8,9 +8,12 @@ angular.module('ChatApp.directives')
     templateUrl: 'views/chat_room.html'
   };
 })
-.directive('chatTabs', function() {
+.directive('chatTabs', function(user) {
   return {
     controller: function($scope) {
+      $scope.closeRoom = function(room) {
+        user.leaveRoom(room);
+      };
       $scope.switchRoom = function(room) {
         angular.forEach($scope.rooms, function(room) {
           room.current = false;

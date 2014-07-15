@@ -18,6 +18,11 @@ angular.module('ChatApp.services')
     return _.findWhere(this.rooms, {current: true});
   };
 
+  user.leaveRoom = function(room) {
+    socket.emit('room_exit', room.name);
+    delete this.rooms[room.name];
+  };
+
   user.save = function(newRoom) {
     socket.emit('user_save', {
       username: this.username
