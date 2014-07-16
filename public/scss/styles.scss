@@ -1,5 +1,12 @@
 @import 'normalize';
 
+%well {
+  border-radius: 5px;
+  -moz-box-shadow: 5px 6px 11px #7E7A94;
+  -webkit-box-shadow: 5px 6px 11px #7E7A94;
+  box-shadow: 5px 6px 11px #7E7A94;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -8,11 +15,16 @@ body {
   background-color: #b0e0f8;
 }
 
-.chat-window {
-  background-color: #fff;
+.chat-window-container {
   float: left;
-  margin-right: 2%;
+  padding: 0 20px;
   width: 80%;
+}
+
+.chat-window {
+  @extend %well;
+  background-color: #fff;
+  display: block;
 }
 
 .chat-messages {
@@ -23,10 +35,15 @@ body {
   font-weight: bold;
 }
 
-.user-window {
-  background-color: #fff;
+.user-window-container {
   float: left;
-  width: 18%;
+  padding-right: 20px;
+  width: 20%;
+}
+
+.user-window {
+  @extend %well;
+  background-color: #fff;
 }
 
 .user-list {
@@ -34,9 +51,10 @@ body {
 }
 
 .chat-input {
-  bottom: 0;
+  bottom: 20px;
+  left: 20px;
   position: absolute;
-  width: 100%;
+  width: 80%;
 }
 
 .message-input {
