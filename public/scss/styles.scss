@@ -1,7 +1,12 @@
 @import 'normalize';
 
+$primary-color: #b0e0f8;
+$secondary-color: #3899c6;
+$text-color: #333;
+
 %well {
-  border-radius: 5px;
+  border: 1px $secondary-color solid;
+  border-radius: 10px;
   -moz-box-shadow: 5px 6px 11px #7E7A94;
   -webkit-box-shadow: 5px 6px 11px #7E7A94;
   box-shadow: 5px 6px 11px #7E7A94;
@@ -12,7 +17,9 @@
 }
 
 body {
-  background-color: #b0e0f8;
+  background-color: $primary-color;
+  color: $text-color;
+  padding-top: 20px;
 }
 
 .chat-window-container {
@@ -28,8 +35,8 @@ body {
 }
 
 .chat-tabs {
-  border-bottom: 1px #eee solid;
-  height: 45px;
+  border-bottom: 1px $secondary-color solid;
+  height: 35px;
   list-style: none;
   padding-left: 15px;
   a {
@@ -39,11 +46,11 @@ body {
   }
   li {
     background-color: #eee;
-    border: 1px #eee solid;
+    border: 1px $secondary-color solid;
     display: block;
     float: left;
     height: 35px;
-    margin-top: 10px;
+    margin-top: 0;
     padding: 0 10px;
   }
   .active {
@@ -86,4 +93,9 @@ body {
 
 .message-input {
   width: 75%;
+}
+
+.room-list {
+  @extend %well;
+  display: none;
 }

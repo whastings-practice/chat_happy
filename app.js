@@ -20,3 +20,4 @@ app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use(router);
 
 server.listen(port);
+console.log('Listening on ' + port);
