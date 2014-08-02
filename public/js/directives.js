@@ -56,6 +56,15 @@ angular.module('ChatApp.directives')
     }
   };
 })
+.directive('roomList', function() {
+  return {
+    restrict: 'E',
+    scope: {
+      rooms: '='
+    },
+    templateUrl: 'views/room_list.html'
+  };
+})
 .directive('userList', function() {
   return {
     restrict: 'E',

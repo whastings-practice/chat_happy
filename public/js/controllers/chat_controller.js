@@ -1,5 +1,7 @@
 angular.module('ChatApp.controllers').
 controller('ChatController', function($scope, ChatRoom, socket, user) {
+  this.roomList = [];
+
   socket.on('name_change', $scope, function(data) {
     var chatRoom = user.rooms[data.roomName];
     chatRoom.addNotice(
@@ -8,6 +10,10 @@ controller('ChatController', function($scope, ChatRoom, socket, user) {
     chatRoom.removeUser(data.oldName);
     chatRoom.addUser(data.newName);
   });
+
+  socket.on('new_room', $scope, function(data) {
+    this.roomList.push(data.name);
+  }.bind(this));
 
   socket.on('room_join', $scope, function(data) {
     var room = ChatRoom.create(data.name, data.userList);
