@@ -1,13 +1,9 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    sass: {
+    compass: {
       buildDev: {
         options: {
-          loadPath: ['vendor/css'],
-          sourcemap: true
-        },
-        files: {
-          'public/css/styles.css': 'public/scss/styles.scss'
+          bundleExec: true
         }
       }
     },
@@ -19,9 +15,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('build_dev', ['sass:buildDev']);
+  grunt.registerTask('build_dev', ['compass:buildDev']);
   grunt.registerTask('default', ['watch:buildDev']);
 };

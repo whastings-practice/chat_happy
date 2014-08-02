@@ -1,4 +1,5 @@
 @import 'normalize';
+@import 'sassy-buttons';
 
 $primary-color: #b0e0f8;
 $secondary-color: #3899c6;
@@ -20,6 +21,10 @@ body {
   background-color: $primary-color;
   color: $text-color;
   padding-top: 20px;
+}
+
+.button {
+  @include sassy-button("flat", 5px, 15px, $secondary-color);
 }
 
 .chat-window-container {
