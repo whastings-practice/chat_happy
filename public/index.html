@@ -13,23 +13,36 @@
       </div>
       <div class="user-window-container" ng-controller="UserController as userCtrl" full-height>
         <div class="user-window" full-height>
+          <h1 class="well-header">Users</h1>
           <user-list ng-repeat="room in userCtrl.rooms" room="room"></user-list>
           <form class="user-settings" ng-submit="userCtrl.user.save(newRoom)">
             <label for="username">Username</label>
             <input type="text" ng-model="userCtrl.user.username" id="username">
-            <label for="room">Join Room</label>
-            <input type="text" ng-model="newRoom" id="room">
-            <input type="submit" value="Save" class="button">
+            <button class="button">
+              <span class="icon-check"></span>
+              Save
+            </button>
           </form>
+          <div class="user-controls">
+            <button class="button" ng-click="chatCtrl.showRooms()">
+              <span class="icon-plus"></span>
+              Join Room
+            </button>
+          </div>
         </div>
       </div>
       <div class="chat-input" ng-controller="InputController as input">
         <form ng-submit="input.sendMessage()">
           <input ng-model="input.message" class="message-input">
-          <input type="submit" value="Send" class="button">
+          <button class="button">
+            <span class="icon-angle-double-left"></span>
+            Send
+          </button>
         </form>
       </div>
-      <room-list rooms="chatCtrl.roomList"></room-list>
+      <room-list rooms="chatCtrl.roomList" user="chatCtrl.user"
+                 ng-show="chatCtrl.roomsShowing" on-close="chatCtrl.hideRooms()">
+      </room-list>
     </div>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/socket.io/socket.io.js"></script>

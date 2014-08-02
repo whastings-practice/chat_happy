@@ -1,6 +1,17 @@
 angular.module('ChatApp.controllers').
 controller('ChatController', function($scope, ChatRoom, socket, user) {
+  var self = this;
   this.roomList = [];
+  this.roomsShowing = false;
+  this.user = user;
+
+  this.hideRooms = function() {
+    self.roomsShowing = false;
+  };
+
+  this.showRooms = function() {
+    self.roomsShowing = true;
+  };
 
   socket.on('name_change', $scope, function(data) {
     var chatRoom = user.rooms[data.roomName];

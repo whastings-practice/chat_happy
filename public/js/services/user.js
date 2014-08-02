@@ -18,6 +18,12 @@ angular.module('ChatApp.services')
     return _.findWhere(this.rooms, {current: true});
   };
 
+  user.joinRoom = function(newRoom) {
+    if (!this.rooms[newRoom]) {
+      socket.emit('room_request', newRoom);
+    }
+  };
+
   user.leaveRoom = function(room) {
     socket.emit('room_exit', room.name);
     delete this.rooms[room.name];
@@ -27,9 +33,6 @@ angular.module('ChatApp.services')
     socket.emit('user_save', {
       username: this.username
     });
-    if (!this.rooms[newRoom]) {
-      socket.emit('room_request', newRoom);
-    }
   };
 
   user.updateInfo = function(data) {

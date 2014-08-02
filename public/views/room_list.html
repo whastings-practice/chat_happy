@@ -1,7 +1,20 @@
 <div class="room-list">
-  <h1>Rooms</h1>
+  <h1 class="well-header">Rooms</h1>
+  <a href="#" class="room-list-close" ng-click="close()">
+    <span class="icon-times"></span>
+  </a>
 
-  <ul>
-    <li ng-repeat="room in rooms">{{room}}</li>
-  </ul>
+  <div class="room-list-content">
+    <form ng-submit="createRoom()">
+      <input type="text" ng-model="newRoomName">
+      <input type="submit" value="Create Room" class="button">
+    </form>
+
+    <ul>
+      <li ng-repeat="room in rooms">
+        <a href="#" ng-click="joinRoom(room)">{{room}}</a>
+      </li>
+    </ul>
+  </div>
+
 </div>
