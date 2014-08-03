@@ -13,6 +13,10 @@ controller('ChatController', function($scope, ChatRoom, socket, user) {
     self.roomsShowing = true;
   };
 
+  socket.on('info_update', $scope, function(data) {
+    user.updateInfo(data);
+  });
+
   socket.on('name_change', $scope, function(data) {
     var chatRoom = user.rooms[data.roomName];
     chatRoom.addNotice(
@@ -40,4 +44,9 @@ controller('ChatController', function($scope, ChatRoom, socket, user) {
     user.rooms[data.roomName].addNotice('User ' + data.user + ' has left.');
     user.rooms[data.roomName].removeUser(data.user);
   });
+
+  //socket.on('user_list_update', $scope, function(data) {
+    //chatRoom.emptyUsers();
+    //chatRoom.addUsers(data);
+  //});
 });

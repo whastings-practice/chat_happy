@@ -49,7 +49,14 @@ body {
 .chat-window-container {
   float: left;
   padding: 0 20px;
+  position: relative;
   width: 80%;
+}
+
+.join-room-button {
+  position: absolute;
+  right: 30px;
+  top: 10px;
 }
 
 .chat-window {
@@ -103,8 +110,23 @@ body {
   background-color: #fff;
 }
 
+.user-settings {
+  margin: 0 0 30px;
+  padding: 0 15px;
+  input {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+  }
+  label {
+    font-weight: bold;
+  }
+}
+
 .user-list {
+  font-size: 120%;
   list-style: none;
+  padding-left: 15px;
 }
 
 .chat-input {

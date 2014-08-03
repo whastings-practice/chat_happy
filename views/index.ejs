@@ -9,26 +9,17 @@
   <body ng-controller="ChatController as chatCtrl">
     <div class="container" full-height>
       <div class="chat-window-container" ng-controller="WindowController as chatWindow" parent-height>
+        <button class="button join-room-button" ng-click="chatCtrl.showRooms()">
+          <span class="icon-plus"></span>
+          Join Room
+        </button>
         <chat-window class="chat-window" rooms="chatWindow.rooms" parent-height></chat-window>
       </div>
-      <div class="user-window-container" ng-controller="UserController as userCtrl" full-height>
+      <div class="user-window-container" full-height>
         <div class="user-window" full-height>
+          <user-settings user="chatCtrl.user"></user-settings>
           <h1 class="well-header">Users</h1>
-          <user-list ng-repeat="room in userCtrl.rooms" room="room"></user-list>
-          <form class="user-settings" ng-submit="userCtrl.user.save(newRoom)">
-            <label for="username">Username</label>
-            <input type="text" ng-model="userCtrl.user.username" id="username">
-            <button class="button">
-              <span class="icon-check"></span>
-              Save
-            </button>
-          </form>
-          <div class="user-controls">
-            <button class="button" ng-click="chatCtrl.showRooms()">
-              <span class="icon-plus"></span>
-              Join Room
-            </button>
-          </div>
+          <user-list ng-repeat="room in chatCtrl.user.rooms" room="room"></user-list>
         </div>
       </div>
       <div class="chat-input" ng-controller="InputController as input">
