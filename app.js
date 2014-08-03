@@ -4,6 +4,7 @@ var ChatManager = require('./lib/chat_manager'),
     express = require('express'),
     homeRoutes = require('./routes/home'),
     http = require('http'),
+    ngTemplates = require('./middleware/ng_templates'),
     socketIO = require('socket.io');
 
 var app = express(),
@@ -21,6 +22,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/node_modules', express.static(__dirname + '/node_modules'));
 app.use('/css/fonts', express.static(__dirname + '/vendor/css/icomoon/fonts'));
+app.use(ngTemplates(true, __dirname + '/public/views'));
 
 homeRoutes(app, __dirname);
 

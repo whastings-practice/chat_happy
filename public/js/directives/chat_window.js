@@ -5,6 +5,6 @@ angular.module('ChatApp.directives')
     scope: {
       rooms: '='
     },
-    templateUrl: 'views/chat_window.html'
+    templateUrl: 'chat_window.html'
   };
 });

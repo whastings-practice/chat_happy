@@ -37,6 +37,11 @@
                  ng-show="chatCtrl.roomsShowing" on-close="chatCtrl.hideRooms()">
       </room-list>
     </div>
+    <% templates.each(function(contents, name) { %>
+      <script type="text/ng-template" id="<%= name %>">
+        <%- contents %>
+      </script>
+    <% }); %>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/node_modules/protomatter/protomatter.js"></script>

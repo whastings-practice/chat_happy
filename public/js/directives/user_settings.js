@@ -5,6 +5,6 @@ angular.module('ChatApp.directives')
     scope: {
       user: '='
     },
-    templateUrl: 'views/user_settings.html'
+    templateUrl: 'user_settings.html'
   };
 });

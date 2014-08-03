@@ -19,6 +19,6 @@ angular.module('ChatApp.directives')
       rooms: '=',
       user: '='
     },
-    templateUrl: 'views/room_list.html'
+    templateUrl: 'room_list.html'
   };
 });

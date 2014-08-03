@@ -14,6 +14,6 @@ angular.module('ChatApp.directives')
     scope: {
       room: '='
     },
-    templateUrl: 'views/chat_room.html'
+    templateUrl: 'chat_room.html'
   };
 });
