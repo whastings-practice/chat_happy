@@ -12,6 +12,7 @@ angular.module('ChatApp.services')
       return;
     }
     this.rooms[room.name] = room;
+    room.current = true;
   };
 
   user.currentRoom = function() {
@@ -20,6 +21,9 @@ angular.module('ChatApp.services')
 
   user.joinRoom = function(newRoom) {
     if (!this.rooms[newRoom]) {
+      _.each(this.rooms, function(room) {
+        room.current = false;
+      });
       socket.emit('room_request', newRoom);
     }
   };

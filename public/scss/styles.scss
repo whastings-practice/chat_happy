@@ -68,6 +68,7 @@ body {
   border-bottom: 1px $secondary-color solid;
   height: 35px;
   list-style: none;
+  margin-bottom: 0;
   padding-left: 15px;
   a {
     color: #868383;
@@ -89,6 +90,11 @@ body {
       color: #333;
     }
   }
+}
+
+.chat-room {
+  display: block;
+  overflow-y: auto;
 }
 
 .chat-messages {
@@ -124,9 +130,15 @@ body {
 }
 
 .user-list {
+  display: block;
+  overflow-y: auto;
+}
+
+.users {
   font-size: 120%;
   list-style: none;
   padding-left: 15px;
+  margin-top: 0;
 }
 
 .chat-input {

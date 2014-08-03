@@ -19,7 +19,9 @@
         <div class="user-window" full-height>
           <user-settings user="chatCtrl.user"></user-settings>
           <h1 class="well-header">Users</h1>
-          <user-list ng-repeat="room in chatCtrl.user.rooms" room="room"></user-list>
+          <user-list class="user-list" ng-repeat="room in chatCtrl.user.rooms"
+                     room="room" remaining-height ng-show="room.current">
+          </user-list>
         </div>
       </div>
       <div class="chat-input" ng-controller="InputController as input">

@@ -1,2 +1,3 @@
 <chat-tabs rooms="rooms"></chat-tabs>
-<chat-room ng-repeat="room in rooms" room="room"></chat-room>
+<chat-room class="chat-room" ng-repeat="room in rooms" room="room" remaining-height ng-show="room.current">
+</chat-room>
