@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="/css/styles.css">
+    <% stylesheets.forEach(function(stylesheet) { %>
+      <link rel="stylesheet" href="/css/<%= stylesheet %>">
+    <% }); %>
     <title>Chat App</title>
   </head>
   <body ng-controller="ChatController as chatCtrl">
@@ -42,10 +44,7 @@
         <%- contents %>
       </script>
     <% }); %>
-    <script src="/bower_components/angular/angular.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/node_modules/protomatter/protomatter.js"></script>
-    <script src="/node_modules/underscore/underscore.js"></script>
     <% scripts.forEach(function(script) { %>
       <script src="/js/<%= script %>"></script>
     <% }); %>

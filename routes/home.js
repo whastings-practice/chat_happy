@@ -3,14 +3,13 @@
 var glob = require('glob'),
     _ = require('underscore');
 
-module.exports = function(app, rootDir) {
-  glob('**/*.js', {cwd: rootDir + '/public/js'}, function(error, files) {
-    if (error) {
-      throw error;
-    }
-    app.get('/', function(req, res) {
-      res.render('index', {scripts: files, templates: _(req.ngTemplates)});
+module.exports = function(app, assetDir) {
+  app.get('/', function(req, res) {
+    res.render('index', {
+      assetDir: assetDir,
+      scripts: req.scripts,
+      stylesheets: req.stylesheets,
+      templates: _(req.ngTemplates)
     });
   });
-
 };
