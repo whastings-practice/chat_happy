@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <% stylesheets.forEach(function(stylesheet) { %>
-      <link rel="stylesheet" href="/css/<%= stylesheet %>">
-    <% }); %>
+    <%- css('styles') %>
     <title>Chat App</title>
   </head>
   <body ng-controller="ChatController as chatCtrl">
@@ -45,8 +43,10 @@
       </script>
     <% }); %>
     <script src="/socket.io/socket.io.js"></script>
-    <% scripts.forEach(function(script) { %>
-      <script src="/js/<%= script %>"></script>
-    <% }); %>
+    <% if (environment === 'production') { %>
+      <%- js('manifest_prod') %>
+    <% } else { %>
+      <%- js('manifest') %>
+    <% } %>
   </body>
 </html>
