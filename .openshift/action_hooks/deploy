@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+ln -s "$OPENSHIFT_DATA_DIR/styles.css" "$OPENSHIFT_REPO_DIR/public/css/styles.css"
+ln -s "$OPENSHIFT_DATA_DIR/bower_components" "$OPENSHIFT_REPO_DIR/bower_components"

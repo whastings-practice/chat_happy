@@ -36,8 +36,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build_dev', ['compass:build']);
   grunt.registerTask('build', [
     'ngmin:build',
-    'uglify:build',
-    'compass:build'
+    'uglify:build'
   ]);
   grunt.registerTask('default', ['watch:buildDev']);
 };

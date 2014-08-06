@@ -1,4 +1,5 @@
 /bower_components
 /builtAssets
 /node_modules
-/public/css
+/public/css/*.css
+/public/css/*.map

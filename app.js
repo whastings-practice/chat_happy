@@ -15,7 +15,8 @@ var app = express(),
 var io = socketIO(server),
     chatManager = ChatManager.create(io);
 
-var port = process.argv[2] || 8080;
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -36,5 +37,5 @@ app.use(ngTemplates((environment === 'development'), __dirname + '/public/views'
 
 homeRoutes(app, environment);
 
-server.listen(port);
+server.listen(port, ip);
 console.log('Listening on ' + port);
