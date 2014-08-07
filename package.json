@@ -2,10 +2,9 @@
   "name": "chat_happy",
   "version": "0.1.0",
   "description": "A simple websocket-powered chat application.",
-  "main": "app.js",
+  "main": "forever.js",
   "scripts": {
-    "postinstall": "./post_install.sh",
-    "start": "node app.js"
+    "postinstall": "./post_install.sh"
   },
   "author": "Will Hastings <will@objectdotcreate.net>",
   "license": "MIT",
@@ -28,7 +27,8 @@
     "grunt-ngmin": "0.0.3",
     "grunt-contrib-uglify": "^0.5.1",
     "bower": "^1.3.8",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "forever": "~0.11.1"
   },
   "repository": {
     "type": "git",
